@@ -36,6 +36,25 @@ public class Guesser{
 	
 
 	public void ComputerGuesser(){
+		int min = 1;
+		int max = 100;
+		boolean keepGoing = true;
+		Scanner input = new Scanner(System.in);
+		while(keepGoing){
+			int CAnswer = (max - min);
+			System.out.println("my guess is" + CAnswer);
+			System.out.println("Is this (C)orrect, Too (H)igh or too (L)ow?");
+			String response = input.nextLine();
+			if (response.equals("C")){
+				System.out.println("Great! Thanks for playing with me!");
+				keepGoing = false;
+			}//end if
+			else if (response.equals("H"))
+				max = CAnswer;
+
+			else if (response.equals("L"))
+				min = CAnswer;
+		}//end while
 	}//end ComputerGuesser
 	
 	public void HumanGuesser(){
