@@ -1,8 +1,8 @@
-Menu.class: Menu.java 
-	javac -g Menu.java
+Guesser.class: Guesser.java 
+	javac -g Guesser.java
 
-run: Menu.class
-	java Menu
+run: Guesser.class
+	java Guesser
 
-debug: Menu.class
-	jdb Menu
+debug: Guesser.class
+	jdb Guesser

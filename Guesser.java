@@ -1,3 +1,5 @@
+import java.util.Scanner;
+import java.util.Random;
 
 public class Guesser{
 	public static void main(String[] args){
@@ -5,10 +7,10 @@ public class Guesser{
 	}// end main
 
 	public void Guesser(){
-		java.util.Scanner input = new java.util.Scanner(System.in);
+		Scanner input = new Scanner(System.in);
 		boolean keepGoing = true;
 		while(keepGoing){
-			G.menuPrint();
+			menuPrint();
 			String response = input.nextLine();
 
 			if (response.equals("0")){
@@ -37,5 +39,29 @@ public class Guesser{
 	}//end ComputerGuesser
 	
 	public void HumanGuesser(){
+		int min = 1;
+		int max = 100;
+		Random rand = new Random();
+		int Answer = rand.nextInt((max-min)+1) + 1;
+		Scanner input = new Scanner(System.in);
+		boolean keepGoing = true;
+		while(keepGoing){
+			System.out.println("Enter your guess!");
+			String response = input.nextLine();
+			int guess = Integer.parseInt(response);
+			if (Answer == guess){
+				System.out.println("Correct!");
+				keepGoing = false;
+			}//end if correct
+
+			else if (guess < Answer)
+				System.out.println("too low");
+
+			else if (guess > Answer) 
+				System.out.println("too high");
+			
+			else 
+				System.out.println("please enter an int");
+		}// end while
 	}//end HumanGuesser
-}// end menu def
+}// end Guesser def
