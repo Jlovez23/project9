@@ -6,7 +6,7 @@ public class Guesser{
 		Guesser G = new Guesser();
 	}// end main
 
-	public void Guesser(){
+	public Guesser(){
 		Scanner input = new Scanner(System.in);
 		boolean keepGoing = true;
 		while(keepGoing){
@@ -17,15 +17,15 @@ public class Guesser{
 				keepGoing = false;
 			}
 			else if (response.equals("1")){
-				System.out.println("HumanGuesser");
+				HumanGuesser();
 			}
 			else if (response.equals("2")){
-				System.out.println("ComputerGuesser");
+				ComputerGuesser();
 			}
 			else
-				System.out.print("incorrect input");
+				System.out.println("incorrect input");
 		}//end while
-		System.out.print("Goodbye!");	
+		System.out.println("Goodbye!");	
 	}//end menuLoop
 	
 	public void menuPrint(){
@@ -41,8 +41,8 @@ public class Guesser{
 		boolean keepGoing = true;
 		Scanner input = new Scanner(System.in);
 		while(keepGoing){
-			int CAnswer = (max - min);
-			System.out.println("my guess is" + CAnswer);
+			int CAnswer = ((max + min) / 2);
+			System.out.println("my guess is " + CAnswer);
 			System.out.println("Is this (C)orrect, Too (H)igh or too (L)ow?");
 			String response = input.nextLine();
 			if (response.equals("C")){
